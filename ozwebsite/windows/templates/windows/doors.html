@@ -1,0 +1,200 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<div id="window-product-page" class="container my-5 ">
+
+    <!-- Features Section -->
+    <div id="features-section" class="my-5">
+        <h2 class="section-title text-center">Why Choose Our Doors?</h2>
+        <div class="row mt-4">
+
+            <!-- Feature 1 -->
+            <div class="col-md-4 feature-item">
+                <div class="feature-content">
+                    <img src="{% static 'images/feature14.png' %}" alt="Artfully Crafted Doors" class="feature-image">
+                    <h4 class="feature-title">Artfully Crafted Doors</h4>
+                    <p class="feature-description">Combine style and strength for stunning entryways that make a statement.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4 feature-item">
+                <div class="feature-content">
+                    <img src="{% static 'images/feature11.png' %}" alt="Customization Options" class="feature-image">
+                    <h4 class="feature-title">Customization Options</h4>
+                    <p class="feature-description">Choose from various materials, styles, and finishes to match your home’s character.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4 feature-item">
+                <div class="feature-content">
+                    <img src="{% static 'images/feature15.png' %}" alt="Durable Doors" class="feature-image">
+                    <h4 class="feature-title">Built for Durability</h4>
+                    <p class="feature-description">Engineered to withstand the elements while ensuring seamless operation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Advantages Section -->
+    <div id="advantages-section" class="my-5">
+        <h2 class="section-title text-center">Advantages of Our Doors</h2>
+        <div class="row mt-4">
+
+            <!-- Advantage 1 -->
+            <div class="col-md-3 advantage-box text-center">
+                <i class="fas fa-cogs advantage-icon mb-2"></i>
+                <h5 class="advantage-title">Tailored Designs</h5>
+                <p class="advantage-description">Extensive range of designs, sizes, and finishes to fit your style.</p>
+            </div>
+
+            <!-- Advantage 2 -->
+            <div class="col-md-3 advantage-box text-center">
+                <i class="fas fa-volume-up advantage-icon mb-2"></i>
+                <h5 class="advantage-title">Quiet Comfort</h5>
+                <p class="advantage-description">Superior sound insulation for a peaceful environment.</p>
+            </div>
+
+            <!-- Advantage 3 -->
+            <div class="col-md-3 advantage-box text-center">
+                <i class="fas fa-cloud-sun advantage-icon mb-2"></i>
+                <h5 class="advantage-title">All-Weather Protection</h5>
+                <p class="advantage-description">Designed to withstand extreme weather, ensuring comfort year-round.</p>
+            </div>
+
+            <!-- Advantage 4 -->
+            <div class="col-md-3 advantage-box text-center">
+                <i class="fas fa-broom advantage-icon mb-2"></i>
+                <h5 class="advantage-title">Effortless Care</h5>
+                <p class="advantage-description">Minimal maintenance required for lasting beauty and functionality.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="cta-section-unique">
+        <div class="cta-content-unique">
+            <h3 class="cta-heading-unique">Transform Your Entrance Today!</h3>
+            <p class="cta-text-unique">Contact us for a personalized consultation and a detailed quote tailored to your needs.</p>
+            <a href="{% url 'request_quote' %}" class="cta-button-unique">Request Your Quote</a>
+        </div>
+    </div>
+
+    <!-- Technical Overview Section -->
+    <div id="technical-performance-overview" class="my-5 container">
+        <h2 class="section-title text-center">Exceptional Quality & Performance</h2>
+        <p class="text-center mb-4">Discover the innovative features and technology that make our doors the best choice.</p>
+        <div class="mt-4">
+
+            <!-- Technical Feature 1 -->
+            <div class="row mb-4 align-items-center reverse-unique">
+                <div class="col-md-6 order-md-2 text-center">
+                    <img src="{% static 'images/technical1.png' %}" alt="Advanced Insulation" class="technical-icon mb-3">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h5 class="feature-title">Superior Insulation</h5>
+                    <p class="feature-description">Advanced insulation reduces heat transfer, maintaining a comfortable climate year-round.</p>
+                </div>
+            </div>
+
+            <!-- Technical Feature 2 -->
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <h5 class="feature-title">Weather-Tight Seal</h5>
+                    <p class="feature-description">High-performance seals prevent air and water infiltration, enhancing energy efficiency.</p>
+                </div>
+                <div class="col-md-6 order-md-1 text-center">
+                    <img src="{% static 'images/feature19.png' %}" alt="Weather-Sealed" class="technical-icon mb-3">
+                </div>
+            </div>
+
+            <!-- Technical Feature 3 -->
+            <div class="row mb-4 align-items-center reverse-unique">
+                <div class="col-md-6 order-md-2 text-center">
+                    <img src="{% static 'images/feature14.png' %}" alt="Enhanced Security" class="technical-icon mb-3">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h5 class="feature-title">Robust Security</h5>
+                    <p class="feature-description">Top-grade locking systems and reinforced frames provide peace of mind and aesthetic appeal.</p>
+                </div>
+            </div>
+
+            <!-- Technical Feature 4 -->
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <h5 class="feature-title">Innovative Drainage System</h5>
+                    <p class="feature-description">Dual drainage design channels water away effectively, preventing leaks in heavy rain.</p>
+                </div>
+                <div class="col-md-6 order-md-1 text-center">
+                    <img src="{% static 'images/s80img2.png' %}" alt="Drain System" class="technical-icon mb-3">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Testimonials Section (Optional) -->
+    <div id="testimonials-section" class="my-5">
+        <h2 class="section-title text-center">Customer Stories</h2>
+        <p class="text-center">See how our doors have transformed homes across the country:</p>
+        <div class="testimonial-carousel">
+            <!-- Carousel or testimonial content here -->
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer-custom">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo-box">
+                <h2 class="footer-logo">ArchiThermal</h2>
+                <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="{% url 'window_list' %}">Windows</a></li>
+                        <li><a href="{% url 'door' %}">Doors</a></li>
+                        <li><a href="#">Curtain Detailing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'careers' %}">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Code of Conduct</a>
+            </div>
+            <p>&copy; 2024 ArchiThermal. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

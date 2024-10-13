@@ -1,0 +1,154 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Quote| ArchiThermal Windows & Doors</title>
+</head>
+<body>
+{% block content %}
+
+<div class="quote-page">
+<section class="quote-steps">
+    <h2>How It Works</h2>
+    <ol>
+        <li>
+            <h3>Step 1: Submit Your Request</h3>
+            <p>Provide your project details by filling out our form. Let us know your vision, and we’ll take it from there.</p>
+        </li>
+        <li>
+            <h3>Step 2: Consultation</h3>
+            <p>Our expert team will reach out to discuss your specifications and provide personalized recommendations.</p>
+        </li>
+        <li>
+            <h3>Step 3: Preliminary Quote</h3>
+            <p>Based on your project requirements, we’ll offer a rough estimate of the costs and timeline.</p>
+        </li>
+        <li>
+            <h3>Step 4: Detailed Quote</h3>
+            <p>Once the specifics are finalized, you’ll receive a detailed quote with clear pricing for all aspects of the job.</p>
+        </li>
+        <li>
+            <h3>Step 5: Delivery & Installation</h3>
+            <p>Our team delivers and installs your windows or doors with utmost care and professionalism.</p>
+        </li>
+    </ol>
+</section>
+
+<div class="form-section">
+  <div class="container">
+    <h2>Get a Quote</h2>
+    <p>Request a quote below, and we'll help create the perfect solution for your space. <br>Have files you want to send? Free feel to send them to quotes@archithermal.com.au</p>
+
+    <!-- Start the Django form -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <label for="name">Full Name</label>
+        {{ form.name }}
+
+        <label for="email">Email Address</label>
+        {{ form.email }}
+
+        <label for="phone_number">Phone Number</label>
+        {{ form.phone_number }}
+
+        <label for="address">Address</label>
+        {{ form.address }}
+
+        <label for="suburb">Suburb</label>
+        {{ form.suburb }}
+
+        <label for="product">Select Product</label>
+        {{ form.product }}
+
+        <label for="job_type">Job Type</label>
+        {{ form.job_type }}
+
+        <label for="message">Additional Details</label>
+        {{ form.message }}
+
+        <button type="submit">Request Quote</button>
+    </form>
+    <!-- End of Django form -->
+  </div>
+</div>
+
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+        <p>"ArchiThermal transformed our home! The attention to detail and quality are unmatched. We're beyond thrilled with the results."</p>
+        <div class="customer-name">- Sarah D.</div>
+    </div>
+    <div class="testimonial">
+        <p>"From start to finish, the process was seamless. The consultation was professional, and the windows were installed perfectly. Highly recommend!"</p>
+        <div class="customer-name">- James T.</div>
+    </div>
+</section>
+
+<div class="customer-assurance">
+  <div class="container">
+    <h2>Why Choose Us?</h2>
+    <p>At ArchiThermal, we prioritise customer satisfaction and quality craftsmanship. Our team of professionals is dedicated to providing high-end solutions that stand the test of time.</p>
+  </div>
+</div>
+
+</div>
+<footer class="footer-custom">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo-box">
+                <h2 class="footer-logo">ArchiThermal</h2>
+                <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="{% url 'window_list' %}">Windows</a></li>
+                        <li><a href="#">Doors</a></li>
+                        <li><a href="#">Curtain Detailing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'careers' %}">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Code of Conduct</a>
+            </div>
+            <p class="footer-credit">
+                <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+            </p>
+        </div>
+    </div>
+</footer>
+{% endblock content %}
+</body>
+</html>
+
+

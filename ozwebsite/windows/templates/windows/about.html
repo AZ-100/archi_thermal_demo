@@ -1,0 +1,80 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<section class="about py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mb-4">
+                <h1 class="display-4">About ArchiThermal</h1>
+                <p class="lead">Luxury, Innovation, Performance</p>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <p class="mb-4">
+                    ArchiThermal is dedicated to delivering high-performance windows that combine cutting-edge design with superior thermal efficiency. We believe in creating architectural solutions that are not only aesthetically refined but also enhance the comfort and energy efficiency of your space.
+                </p>
+                <p class="mb-4">
+                    Our team of experts works closely with architects and homeowners to ensure every window meets the highest standards of quality, precision, and craftsmanship. With ArchiThermal, you invest in windows that redefine luxury and elevate your living or working environment.
+                </p>
+            </div>
+        </div>
+        <div class="video-group">
+            <video width="640" height="360" controls controlsList="nodownload">
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-custom">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo-box">
+                <h2 class="footer-logo main-logo">ArchiThermal</h2>
+                <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="{% url 'window_list' %}">Windows</a></li>
+                        <li><a href="{% url 'door' %}">Doors</a></li>
+                        <li><a href="#">Curtain Detailing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'careers' %}">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Code of Conduct</a>
+            </div>
+            <p class="footer-credit">
+                <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+            </p>
+        </div>
+    </div>
+</footer>
+
+{% endblock content %}

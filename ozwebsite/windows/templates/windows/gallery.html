@@ -1,0 +1,74 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<section class="gallery">
+    <div class="container">
+        <h1>Image Gallery</h1>
+        {% if request.user.is_superuser or is_staff %}
+        <a href="{% url 'upload_image' %}">Upload New Image</a>
+        {% endif %}
+        <div class="gallery">
+            {% for image in images %}
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    <div class="clearfix"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer-custom">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo-box">
+                <h2 class="footer-logo main-logo">ArchiThermal</h2>
+                <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="{% url 'window_list' %}">Windows</a></li>
+                        <li><a href="{% url 'door' %}">Doors</a></li>
+                        <li><a href="#">Curtain Detailing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'careers' %}">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Code of Conduct</a>
+            </div>
+            <p class="footer-credit">
+                <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+            </p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

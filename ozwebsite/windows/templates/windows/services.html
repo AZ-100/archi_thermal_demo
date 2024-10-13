@@ -1,0 +1,166 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<div class="services-page-unique">
+    <div class="hero-section-unique container">
+        <div class="hero-overlay-unique">
+            <h1 class="page-title-unique">Our Premium Services</h1>
+            <p class="subtitle-unique">Exquisite craftsmanship, tailored to your needs.</p>
+        </div>
+    </div>
+
+    <div class="video-group">
+        <video width="640" height="360" controls controlsList="nodownload">
+            <source src="{{ video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="service-intro-unique">
+        <h2 class="section-heading-unique">Elevating the Art of Architectural Solutions</h2>
+        <p class="section-text-unique">
+            At <strong>ArchiThermal</strong>, we take pride in offering unparalleled design and installation services for 
+            luxury windows and doors. Every project is treated as a work of art, meticulously crafted to exceed your 
+            expectations in both aesthetics and performance.
+        </p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-container-unique container ">
+        <!-- Windows -->
+        <div class="service-item-unique">
+            <div class="service-image-unique">
+                <img src="{% static 'images/feature1.png' %}" alt="Custom Window Design">
+            </div>
+            <div class="service-details-unique">
+                <h3 class="service-title-unique">Windows</h3>
+                <p class="service-description-unique">
+                    Our bespoke window designs are tailored to complement the unique architecture of your home. We use 
+                    only the highest quality materials and cutting-edge technology to ensure maximum energy efficiency 
+                    without compromising on style.
+                </p>
+            </div>
+        </div>
+        <!-- Doors -->
+        <div class="service-item-unique reverse-unique">
+            <div class="service-image-unique">
+                <img src="{% static 'images/feature10.png' %}" alt="Luxury Door Installation">
+            </div>
+            <div class="service-details-unique">
+                <h3 class="service-title-unique">Doors</h3>
+                <p class="service-description-unique">
+                    From grand entrance doors to sleek, modern sliding doors, we specialize in crafting doors that 
+                    combine elegance, security, and durability. Our expert installers ensure a flawless finish with 
+                    minimal disruption to your living space.
+                </p>
+            </div>
+        </div>
+
+        <!-- Luxury Door Installation -->
+        <div class="service-item-unique">
+            <div class="service-image-unique">
+                <img src="{% static 'images/feature9.png' %}" alt="Luxury Door Installation">
+            </div>
+            <div class="service-details-unique">
+                <h3 class="service-title-unique">Windows and Doors Installation </h3>
+                <p class="service-description-unique">
+                    At ArchiThermal, we provide professional window and door installation services, with the ability to take on select installation jobs depending on the project requirements. If additional installers are needed, we are happy to recommend trusted third-party subcontractors to ensure your project is completed to the highest standards.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+<div class="cta-section-unique">
+    <div class="cta-content-unique">
+        <h3 class="cta-heading-unique">Ready to Get Your FREE Quote?</h3>
+        <p class="cta-text-unique">Contact us today to request a personalised quote for your project.</p>
+        <a href="{% url 'request_quote' %}" class="cta-button-unique">Get a Quote</a>
+    </div>
+</div>
+
+
+        <!-- Office Fit-Out -->
+        <div class="services-container-unique container">
+        <div class="service-item-unique">
+            <div class="service-details-unique">
+                <h3 class="service-title-unique">Office Fit-Out</h3>
+                <p class="service-description-unique">
+                    Transform your office space with our tailor-made fit-out solutions, designed to enhance functionality 
+                    and create a comfortable, inspiring work environment.
+                </p>
+            </div>
+            <div class="service-image-unique">
+                <img src="{% static 'images/feature5.png' %}" alt="Office Fit-Out">
+            </div>
+        </div>
+
+        <!-- Curtain Walling -->
+        <div class="service-item-unique item-reverse">
+            <div class="service-image-unique">
+                <img src="{% static 'images/feature6.png' %}" alt="Curtain Walling">
+            </div>
+            <div class="service-details-unique">
+                <h3 class="service-title-unique">Curtain Walling</h3>
+                <p class="service-description-unique">
+                    Our curtain wall systems provide a striking aesthetic to your building's facade while ensuring 
+                    weather resistance, energy efficiency, and structural stability.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-box">
+                    <h2 class="footer-logo main-logo">ArchiThermal</h2>
+                    <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+                </div>
+    
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="{% url 'window_list' %}">Windows</a></li>
+                            <li><a href="{% url 'door' %}">Doors</a></li>
+                            <li><a href="#">Curtain Detailing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'careers' %}">Careers</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+                <p class="footer-credit">
+                    <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock %}

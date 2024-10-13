@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 class="year">Upcoming Events</h3>
+    {% for event in events %}
+    <div class="event">
+        <div class="event-left">
+            <div class="event-date">
+                <div class="date">
+                    {{ event.formatted_date }}
+                </div>
+                <div class="month">
+                    {{ event.formatted_month }}
+                </div>
+            </div>
+        </div>
+        <div class="event-right">
+            <h3 class="event-title">{{ event.title }}</h3>
+            <div class="event-description">
+                <p>{{ event.description }}</p>
+            </div>
+            <div class="event-timing">
+                <i class="fa-solid fa-clock">{{ event.time }}</i>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No upcoming events.</p>
+    {% endfor %}
+</div>
+{% endblock content %}

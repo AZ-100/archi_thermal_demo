@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EW8E32N763"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EW8E32N763');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Navbar with Dropdown and Banner</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar a.logo:hover {
+            border-bottom: none;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: #222;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto; /* Ensures the links are aligned to the left */
+        }
+
+        .navbar a {
+            font-size: 1em;
+            color: #555;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a.logo {
+            font-size: 2em;
+        }
+
+        .navbar a:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            padding: 10px 0;
+            right: 0; /* Align dropdown to the right */
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            margin-left: auto; /* Push the hamburger to the right */
+        }
+
+        .hamburger div {
+            height: 3px;
+            background-color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.active .hamburger div:nth-child(1) {
+            transform: rotate(45deg);
+            top: 7px;
+        }
+
+        .navbar.active .hamburger div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar.active .hamburger div:nth-child(3) {
+            transform: rotate(-45deg);
+            top: -7px;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            padding-top: 20px;
+            text-align: center;
+            width: 100%; /* Ensures it takes full width */
+            align-items: center; /* Center-aligns items */
+        }
+
+        .navbar.active .navbar-links {
+            display: none; /* Hide regular navbar links when mobile menu is active */
+        }
+
+        .navbar.active .mobile-menu {
+            display: flex; /* Show mobile menu when navbar is active */
+            gap: 10px;
+            justify-content: center; /* Centering horizontally */
+        }
+
+        /* Image banner styling */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
+        url('{% static 'images/feature17.png' %}') no-repeat center center/cover;
+            /* background: url('https://d2rxt25e475whq.cloudfront.net/wp-content/uploads/2022/10/25231615/AdobeStock_534022933-1-962x500.jpeg') no-repeat center center/cover; */
+        }
+
+        .banner-text {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .navbar {
+                flex-direction: column; /* Stack navbar items */
+                align-items: flex-start; /* Align to the start */
+                padding: 15px 20px;
+                text-align: left; /* Align text to the left */
+            }
+
+            .navbar-links {
+                display: none; /* Hide regular links */
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger on mobile */
+            }
+
+            .mobile-menu {
+                display: none; /* Hide mobile menu by default */
+            }
+
+            .navbar.active .mobile-menu {
+                display: flex; /* Show mobile menu when active */
+                width: 100%; /* Full width for mobile menu */
+            }
+
+            .dropdown-content {
+                position: static; /* Make dropdown content appear below */
+                box-shadow: none; /* Remove shadow */
+                width: 100%; /* Full width for dropdown */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="{% url 'index' %}" class="logo"><img src="{% static 'images/logo3.png' %}" alt=""></a>
+
+        <!-- Navbar Links -->
+        <div class="navbar-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+
+            <!-- Dropdown for Doors -->
+            <div class="dropdown">
+                <a href="{% url 'door' %}" class="dropdown-btn">Doors</a>
+                <div class="dropdown-content">
+                    {% for product in products_by_type.door %}
+                        <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                    {% empty %}
+                        <a href="#">No Doors Available</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="{% url 'window_list' %}" class="dropdown-btn">Windows</a>
+                <div class="dropdown-content">
+                    {% for product in products_by_type.window %}
+                        <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                    {% empty %}
+                        <a href="#">No Windows Available</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+        <!-- Hamburger icon for mobile screens -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Mobile menu links -->
+        <div class="mobile-menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="#" class="dropdown-btn">Doors</a>
+            <div class="dropdown-content">
+                {% for product in products_by_type.door %}
+                <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+            {% empty %}
+                <a href="#">No Doors Available</a>
+            {% endfor %}
+            </div>
+            <a href="{% url 'window_list' %}" class="dropdown-btn">Windows</a>
+            <div class="dropdown-content">
+                {% for product in products_by_type.window %}
+                <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+            {% empty %}
+                <a href="#">No Windows Available</a>
+            {% endfor %}
+            </div>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Image banner section -->
+<div class="banner">
+    <div class="banner-text">Experience Elegance & Quality</div>
+</div>
+<script>
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+</script>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

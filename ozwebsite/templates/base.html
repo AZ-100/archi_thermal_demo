@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiThermal - Navigation</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #ffffff; /* Background color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            padding: 15px 20px; /* Padding */
+            display: flex; /* Flexbox for alignment */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items vertically */
+        }
+
+        nav h1 {
+            font-size: 24px; /* Logo font size */
+            color: #000; /* Logo color */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Navbar links */
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Horizontal layout */
+            position: relative; /* Position relative for dropdowns */
+        }
+
+        nav li {
+            margin-left: 20px; /* Space between links */
+            position: relative; /* Position relative for dropdowns */
+        }
+
+        nav a {
+            text-decoration: none; /* Remove underline */
+            color: #ffffff; /* Default link color (white) */
+            padding: 10px 15px; /* Padding for links */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth background and color transition */
+            background-color: #333; /* Default background for links */
+        }
+
+        /* Hover effect */
+        nav a:hover {
+            background-color: #f0f0f0; /* Light gray on hover */
+            color: #000; /* Change link color on hover */
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute; /* Position absolute */
+            top: 100%; /* Position below the parent */
+            left: 0; /* Align left */
+            background-color: white; /* Background color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+            z-index: 1; /* Above other elements */
+            padding: 10px 0; /* Padding for dropdown */
+        }
+
+        nav li:hover .dropdown {
+            display: block; /* Show dropdown on hover */
+        }
+
+        .dropdown a {
+            display: block; /* Full width links */
+            padding: 10px 15px; /* Padding for links */
+            color: #333; /* Link color */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+
+        .dropdown a:hover {
+            background-color: #f0f0f0; /* Light gray on hover */
+        }
+
+        /* Responsive menu toggle */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            flex-direction: column; /* Stack items */
+            cursor: pointer; /* Pointer on hover */
+        }
+
+        .bar {
+            height: 3px; /* Bar height */
+            width: 25px; /* Bar width */
+            background-color: #333; /* Bar color */
+            margin: 3px 0; /* Spacing between bars */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Hide menu items */
+                flex-direction: column; /* Stack menu items vertically */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Below navbar */
+                left: 0; /* Align left */
+                right: 0; /* Align right */
+                background-color: white; /* Background color */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+                z-index: 1; /* Above other elements */
+            }
+
+            nav ul.active {
+                display: flex; /* Show menu when active */
+            }
+
+            nav .menu-toggle {
+                display: flex; /* Show toggle button */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>ArchiThermal</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <a href="#">Windows</a>
+                <div class="dropdown">
+                    <a href="#">Window Type 1</a>
+                    <a href="#">Window Type 2</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Doors</a>
+                <div class="dropdown">
+                    <a href="#">Door Type 1</a>
+                    <a href="#">Door Type 2</a>
+                </div>
+            </li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Toggle active class
+        });
+    </script>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
+

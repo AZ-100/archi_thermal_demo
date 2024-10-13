@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | OZSLIM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e0e0e0, #ffffff); 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-attachment: fixed; /* Keeps the background fixed during scroll */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            color: #000; /* Black for elegance */
+            font-size: 2.8em;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5em;
+            color: #777; /* Grey for a subtle touch */
+        }
+
+        .thank-you-message {
+            margin: 20px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .thank-you-message p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #3498db; /* Blue for links */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9; /* Darker blue on hover */
+        }
+
+        .cta-button {
+            background-color: #000; /* Black for luxury */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #444; /* Dark grey on hover */
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #bdc3c7; /* Light grey for footer text */
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Thank You!</h1>
+            <p>Your submission has been successfully received.</p>
+        </header>
+        <main>
+            <div class="thank-you-message">
+                <p>We appreciate you reaching out to us. Our team will review your message and get back to you shortly.</p>
+                <p>If you have any further questions, feel free to <a href="{% url 'contact' %}">contact us</a> again.</p>
+            </div>
+            <button class="cta-button" onclick="window.location.href='{% url 'index' %}'">Go to Homepage</button>
+        </main>
+        <footer>
+            <p>&copy; 2024 ArchiThermal. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+

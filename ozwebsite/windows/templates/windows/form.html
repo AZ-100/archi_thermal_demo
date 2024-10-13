@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+
+<button><a href="{% url 'index' %}">Return Home</a></button>
+{% if x %}
+{{x}}
+{% endif %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {%csrf_token %}
+    {{form.as_p}}
+    <br>
+    <input type="submit">
+</form>

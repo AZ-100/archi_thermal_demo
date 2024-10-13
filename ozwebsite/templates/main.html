@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiThermal</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+        }
+
+        .navbar {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the logo */
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .hamburger {
+            position: absolute; /* Position the hamburger on the left */
+            left: 20px;
+            cursor: pointer;
+            font-size: 2.5em; /* Increased size */
+            color: white;
+            transition: transform 0.3s; /* Smooth transition */
+        }
+
+        .logo {
+            position: absolute; /* Absolute positioning to center */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Shift back by 50% of its width */
+        }
+
+        .logo h1 {
+            font-size: 2.5em; /* Increased font size for the logo */
+            color: white;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: none; /* Hidden by default */
+            position: fixed; /* Use fixed positioning */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height */
+            width: 250px; /* Width of the menu */
+            background-color: black;
+            padding: 40px; /* Increased padding for more space */
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Centered links */
+            transform: translateX(-100%); /* Start off-screen to the left */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .nav-links.active {
+            display: block; /* Show links when active */
+            transform: translateX(0); /* Move into view */
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin: 25px 0; /* Increased margin for spacing */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.8em; /* Increased font size */
+        }
+
+        .banner {
+            background: url('https://imageio.forbes.com/specials-images/imageserve/632da85fd489b4ff8044b12a/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds') no-repeat center center/cover;
+            color: white;
+            padding: 200px 20px; /* Adjust the padding for your banner */
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .banner h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars" id="hamburger-icon"></i>
+        </div>
+        <div class="logo">
+            <h1>ArchiThermal</h1>
+        </div>
+    </nav>
+    <div class="nav-links" id="nav-links">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#doors">Doors</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#request">Request Quote</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+        <h2>Welcome to ArchiThermal</h2>
+        <p>Elegance & Precision in Every Detail</p>
+    </div>
+</header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburgerIcon.classList.toggle('fa-bars'); // Switch to bars icon
+        hamburgerIcon.classList.toggle('fa-times'); // Switch to times icon (X)
+    });
+</script>
+{% block content %}
+{% endblock content %}
+</body>
+</html>
+
+
+

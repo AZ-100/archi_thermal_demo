@@ -1,0 +1,134 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - ArchiThermal</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class="careers-page">
+        <div class="careers-header">
+            <h1>Become Part of ArchiThermal</h1>
+            <p>At ArchiThermal, we specialize in exquisite window and door solutions, and we're seeking dedicated individuals who are ready to make a mark in a vibrant, collaborative environment.</p>
+        </div>
+
+        <div class="careers-culture">
+            <h2>Our Work Environment</h2>
+            <p>We take pride in our unique workplace culture that values character, creativity, and a relaxed atmosphere. Our team thrives on collaboration and mutual respect, where innovative ideas are welcomed, and every member has a voice. With a focus on personal growth and professional development, we ensure that our working conditions inspire passion and excellence.</p>
+        </div>
+
+        <div class="values-section">
+            <h2>Our Core Principles</h2>
+            <ul>
+                <li><strong>Authenticity:</strong> We build trust through genuine relationships and straightforward communication.</li>
+                <li><strong>Quality Craftsmanship:</strong> We are committed to delivering products that exemplify our dedication to excellence.</li>
+                <li><strong>Creative Thinking:</strong> We embrace fresh perspectives and innovative solutions to push boundaries.</li>
+                <li><strong>Team Spirit:</strong> We collaborate to foster a supportive environment that drives collective success.</li>
+            </ul>
+        </div>
+
+        <div class="application-process">
+            <h2>Get in Touch</h2>
+            <p>Excited about joining our journey? We invite you to share your resume and a cover letter with us at <a href="mailto:info@archithermal.com.au">info@archithermal.com.au</a>. We look forward to hearing from talented individuals who resonate with our ethos of quality and innovation.</p>
+        </div>
+    </div>
+    <style>
+        .careers-page {
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+
+        .careers-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .careers-header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+        }
+
+        .careers-culture, .values-section, .application-process {
+            margin-bottom: 30px;
+        }
+
+        .values-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .values-section li {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .application-process a {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .application-process a:hover {
+            color: #003f7f;
+        }
+    </style>
+
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-box">
+                    <h2 class="footer-logo main-logo">ArchiThermal</h2>
+                    <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="{% url 'window_list' %}">Windows</a></li>
+                            <li><a href="{% url 'door' %}">Doors</a></li>
+                            <li><a href="#">Curtain Detailing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'careers' %}">Careers</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+                <p class="footer-credit">
+                    <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock content %}
+</body>
+</html>

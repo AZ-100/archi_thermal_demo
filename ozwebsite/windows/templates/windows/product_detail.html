@@ -1,0 +1,211 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">  <!-- Link to your CSS -->
+</head>
+<body>
+    {% block content %}
+    <div class="luxury-product-container">
+        <h1 class="luxury-product-title">{{ product.name }}</h1>
+        <div class="luxury-product-detail-section">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="luxury-product-image">
+        </div>
+
+
+        <!-- Additional Images Section -->
+        <div class="luxury-product-section additional">
+            <h2 class="luxury-section-heading">Additional Images</h2>
+            {% if product.additional_image_1 %}
+                <img src="{{ product.additional_image_1.url }}" alt="Additional Image 1" class="luxury-product-additional-image">
+            {% endif %}
+            {% if product.additional_image_2 %}
+                <img src="{{ product.additional_image_2.url }}" alt="Additional Image 2" class="luxury-product-additional-image">
+            {% endif %}
+        </div>
+
+
+        <div class="luxury-product-section">
+            <h2 class="luxury-section-heading">Overview</h2>
+            <p class="luxury-product-description">{{ product.description }}</p>
+            <p><strong id="bold">Available:</strong> {{ product.is_available|yesno:"Yes,No" }}</p>
+        </div>
+
+
+
+        <!-- Window-Specific Features Section -->
+        <div class="luxury-product-section">
+            <h2 class="luxury-section-heading">Features</h2>
+            <ul>
+                <li>{{product.feature1}}</li>
+                <li>{{product.feature2}}</li>
+                <li>{{product.feature3}}</li>
+            </ul>
+        </div>
+
+
+       <!-- Applications Section -->
+       <div class="luxury-product-section">
+        <h2 class="luxury-section-heading">Applications</h2>
+        <p>{{product.application}}</p>
+    </div>
+
+    
+
+        <!-- Performance Specifications Section -->
+        <div class="luxury-product-section">
+            <h2 class="luxury-section-heading">Performance Specs</h2>
+            <ul>
+                <li><strong>U-Value:</strong> {{ product.u_value }}</li>
+                <li><strong>Solar Heat Gain Coefficient:</strong> {{ product.solar_heat_gain_coefficient }}</li>
+                <li><strong>Sound Transmission Class (STC):</strong> {{ product.sound_transmission_class }}</li>
+            </ul>
+        </div>
+
+<!-- Technical Specifications Section -->
+<div class="luxury-product-section">
+    <h2 class="luxury-section-heading">Technical Specifications</h2>
+    <ul>
+        <li><strong>Certifications:</strong> {{ product.certifications }}</li>
+    </ul>
+    <table class="luxury-specs-table">
+        <thead>
+            <tr>
+                <th>Specification</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Profile Wall Thickness</td>
+                <td>{{product.profile_wall_thickness}}</td>
+            </tr>
+            <tr>
+                <td>Profile Grade</td>
+                <td>{{product.profile_grade}}</td>
+            </tr>
+            <tr>
+                <td>Insulation Strip Width</td>
+                <td>{{product.insulation_strip_width}}</td>
+            </tr>
+            <tr>
+                <td>Opening Method</td>
+                <td>{{product.opening_method}}</td>
+            </tr>
+            <tr>
+                <td>Hardware Configuration</td>
+                <td>{{product.hardware_configuration}}</td>
+            </tr>
+            <tr>
+                <td>Opening Leaf Size Range</td>
+                <td>{{product.opening_leaf_size_range}}/td>
+            </tr>
+            <tr>
+                <td>Glass Holding Thickness</td>
+                <td>{{product.glass_holding_thickness}}</td>
+            </tr>
+            <tr>
+                <td>Air Tightness</td>
+                <td>{{product.air_tightness}}</td>
+            </tr>
+            <tr>
+                <td>Water Tightness</td>
+                <td>{{product.water_tightness}}</td>
+            </tr>
+            <tr>
+                <td>Wind Pressure Resistance</td>
+                <td>{{product.wind_pressure_resistance}}</td>
+            </tr>
+            <tr>
+                <td>Sound Insulation</td>
+                <td>{{product.sound_insulation}}</td>
+            </tr>
+            <tr>
+                <td>Burglary Resistance</td>
+                <td>{{product.burglary_resistance}}</td>
+            </tr>
+            <tr>
+                <td>Regular Colors</td>
+                <td>{{product.regular_colors}}</td>
+            </tr>
+            <tr>
+                <td>Optional Colors</td>
+                <td>{{product.optional_colors}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+        <!-- Customer Reviews Section -->
+        <div class="luxury-product-section">
+            <h2 class="luxury-section-heading">Customer Reviews</h2>
+            <p>Our customers love their new windows:</p>
+            <blockquote>
+                <p>"Absolutely stunning windows! They have transformed my living room." - Jane D.</p>
+            </blockquote>
+            <blockquote>
+                <p>"The noise reduction is incredible. I can finally enjoy peace and quiet!" - Mike S.</p>
+            </blockquote>
+        </div>
+
+        <!-- Back Button -->
+        <a href="{% url 'window_list' %}" class="luxury-product-back-btn">Go Back</a>
+    </div>
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-box">
+                    <h2 class="footer-logo">ArchiThermal</h2>
+                    <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+                </div>
+    
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="{% url 'window_list' %}">Windows</a></li>
+                            <li><a href="#">Doors</a></li>
+                            <li><a href="#">Curtain Detailing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'careers' %}">Careers</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+                <p class="footer-credit">
+                    <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,176 @@
+{% extends 'navbar.html' %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+  {% block content %}
+    <div class="contact_us_green">
+        <div class="responsive-container-block big-container">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b-2">
+              <form class="form-box" method="post">
+                {% csrf_token %}
+                <div class="container-block form-wrapper">
+                  <div class="head-text-box">
+                    <p class="text-blk contactus-head">
+                      Contact us
+                    </p>
+                    <p class="text-blk contactus-subhead">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    </p>
+                  </div>
+                  <div class="responsive-container-block">
+                    <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6" id="i10mt-6">
+                      <p class="text-blk input-title">
+                        FIRST NAME
+                      </p>
+                      {{ form.name.errors }}
+                      {{ form.name|add_class:"input" }}
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <p class="text-blk input-title">
+                        LAST NAME
+                      </p>
+                      {{ form.last_name.errors }}
+                      {{ form.last_name|add_class:"input" }}
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <p class="text-blk input-title">
+                        EMAIL
+                      </p>
+                      {{ form.email.errors }}
+                      {{ form.email|add_class:"input" }}
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <p class="text-blk input-title">
+                        PHONE NUMBER
+                      </p>
+                      {{ form.phone_number.errors }}
+                      {{ form.phone_number|add_class:"input" }}
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-6">
+                      <p class="text-blk input-title">
+                        WHAT DO YOU HAVE IN MIND
+                      </p>
+                      {{ form.message.errors }}
+                      {{ form.message|add_class:"textinput" }}
+                    </div>
+                  </div>
+                  <div class="btn-wrapper">
+                    <button class="submit-btn">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-10" id="ifgi">
+              <div class="container-box">
+                <div class="text-content">
+                  <p class="text-blk contactus-head">
+                    Contact us
+                  </p>
+                  <p class="text-blk contactus-subhead">
+                    Have a question or need more information? Contact us using the form below, and we’ll get back to you as soon as possible.
+                  </p>
+                </div>
+                <div class="workik-contact-bigbox">
+                  <div class="workik-contact-box">
+                    <div class="phone text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
+                      <p class="contact-text">
+                        0430243942
+                      </p>
+                    </div>
+                    <div class="address text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
+                      <p class="contact-text">
+                        info@archithermal.com.au
+                      </p>
+                    </div>
+                    <div class="mail text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
+                      <p class="contact-text">
+                        22 ViewTech Place, Rowville
+                      </p>
+                    </div>
+                  </div>
+                  <div class="social-media-links">
+                    <a href="">
+                      <img class="social-svg" id="is9ym" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg">
+                    </a>
+                    <a href="">
+                      <img class="social-svg" id="i706n" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+                    </a>
+                    <a href="">
+                      <img class="social-svg" id="ib9ve" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+                    </a>
+                    <a href="">
+                      <img class="social-svg" id="ie9fx" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.0468158450853!2d145.2192705756065!3d-37.92933674065155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad615e31541efc3%3A0xb1f5c7c10eb0721!2s22%20Viewtech%20Pl%2C%20Rowville%20VIC%203178!5e0!3m2!1sen!2sau!4v1728190043264!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-box">
+                    <h2 class="footer-logo main-logo">ArchiThermal</h2>
+                    <p>Your trusted partner in premium window and door solutions. Explore our range of high-quality products and services.</p>
+                </div>
+    
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li><a href="{% url 'request_quote' %}">Request Quote</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="{% url 'window_list' %}">Windows</a></li>
+                            <li><a href="{% url 'door' %}">Doors</a></li>
+                            <li><a href="#">Curtain Detailing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'careers' %}">Careers</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+                <p class="footer-credit">
+                    <small>© 2024 ArchiThermal. All rights reserved. Website created by <a href="https://aaronzhuang.com" target="_blank" class="footer-credit-link">Aaron Zhuang</a>.</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock content %}
+</body>
+</html>
